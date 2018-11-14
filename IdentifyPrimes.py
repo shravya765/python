@@ -14,3 +14,4 @@ for x in range(2,50):
     if x not in noprimes:
         primes.append(x)
 print(primes)
+print(noprimes)
