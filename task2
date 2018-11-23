@@ -1,0 +1,33 @@
+# Task2 - AIM
+
+#1. Take application name and log file path
+#2. The iteration should stop until the user exit without entering anything on the output screen
+#3. Print application name and log path separetly
+#4. Check weather the given path is empty or not
+#5. Sepearate root name and file name for the given log path
+#    For example :  log path is = /var/log/messages     :::: Here File name is messages   and    Root name is var
+
+import os
+db = []
+while True:
+        info = raw_input("enter the application name and log path:  ")
+        if info == '':
+                break
+        db.append(info)
+        name_path = info.split()
+        app_name = name_path[0]
+        log_path = name_path[1]
+        print("The entire list is  " + str (db))
+        if not os.stat(log_path).st_size == 0:
+                print("The log path given is not an empty file")
+        else:
+                print("file is empty")
+        print(app_name)
+        print(log_path)
+        x = int(raw_input("enter the exact / number in the given log path:  "))
+        t = log_path.split('/', x)
+        print(t)
+        t1 = t[-1]
+        t2 = t[1]
+        print("The file name is:  " + t1)
+        print("The root name is:  " + t2)
